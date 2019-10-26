@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: l00ptr
+  description: Install and configure dnsmasq
+  company: PiWeb Corp
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+      galaxy_tags: [dns, system]

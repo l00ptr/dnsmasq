@@ -1,0 +1,22 @@
+---
+# tasks file for dnsmasq
+- name: Install dnsmasq package
+  apt:
+    name: dnsmasq
+    update_cache: true
+
+- name: Apply dnsmasq config
+  template:
+    src: etc/dnsmasq.conf.j2
+    dest: /etc/dnsmasq.conf
+    backup: true
+  notify:
+    - Restart dnsmasq
+
+- name: Copy DNS addn-hosts file (file containing "zone definition")
+  template:
+    src: etc/addnhosts.j2
+    dest: "/etc/{{ dnsmasq_addnhosts_file }}.conf"
+  notify:
+    - Restart dnsmasq
+  ignore_errors: true

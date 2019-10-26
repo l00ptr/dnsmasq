@@ -1,0 +1,8 @@
+listen-address=127.0.0.1,{{ ansible_default_ipv4.address }}
+domain-needed
+bogus-priv
+{% for a_domain in dnsmasq_local_domains %}
+local=/{{ a_domain }}/
+{% endfor %}
+no-hosts
+addn-hosts=/etc/{{ dnsmasq_addnhosts_file }}.conf 
