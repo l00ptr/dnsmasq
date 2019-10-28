@@ -1,5 +1,5 @@
-Role Name
-=========
+dnsmasq
+=======
 
 Allow to install and configure dnsmasq using an additional hosts file
 
